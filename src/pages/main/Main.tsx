@@ -4,7 +4,6 @@ import Students from "../students/Students";
 
 const Main = () => {
   const [editing, setEditing] = useState<any>(null);
-  console.log(editing);
 
   return (
     <div>

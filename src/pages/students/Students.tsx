@@ -15,7 +15,6 @@ interface Props {
 const Students: FC<Props> = ({ setEditing }) => {
   const { getStudents, deleteStudents } = useStudents();
   const { data } = getStudents();
-  console.log(data);
 
   return (
     <div className="max-w-[1200px] mx-auto px-3">

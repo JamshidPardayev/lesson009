@@ -10,6 +10,7 @@ interface Props {
     address: string;
     phone_number: string;
   };
+  setEditing: (val: null) => void;
 }
 
 const Home = ({ editing, setEditing }: Props) => {
