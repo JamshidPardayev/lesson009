@@ -19,7 +19,7 @@ export const useStudents = () => {
     },
   });
   const deleteStudents = useMutation({
-    mutationFn: (id) => api.delete(`/blog/${id}`),
+    mutationFn: (id:number) => api.delete(`/blog/${id}`),
     onSuccess: () => {
       client.invalidateQueries({ queryKey: [key] });
     },

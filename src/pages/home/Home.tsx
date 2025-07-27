@@ -1,14 +1,6 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { useStudents } from "../../hooks/useStudents";
-
-interface Student {
-  id: number;
-  fname: string;
-  lname: string;
-  birthdate: string;
-  phone_number: string;
-  address: string;
-}
+import type { Student } from "../../types";
 
 interface Props {
   editing: Student | null;
@@ -34,11 +26,11 @@ const Home = ({ editing, setEditing }: Props) => {
 
   useEffect(() => {
     if (editing) {
-      setName(editing.fname || "");
-      setSurname(editing.lname || "");
-      setDate(editing.birthdate?.split("T")[0] || "");
-      setAddress(editing.address || "");
-      setPhone(editing.phone_number || "");
+      setName(editing.fname);
+      setSurname(editing.lname);
+      setDate(editing.birthdate?.split("T")[0]);
+      setAddress(editing.address);
+      setPhone(editing.phone_number);
     }
   }, [editing]);
 
