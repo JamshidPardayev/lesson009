@@ -1,16 +1,18 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { useStudents } from "../../hooks/useStudents";
 
+interface Student {
+  id: number;
+  fname: string;
+  lname: string;
+  birthdate: string;
+  phone_number: string;
+  address: string;
+}
+
 interface Props {
-  editing: null | {
-    id: number;
-    fname: string;
-    lname: string;
-    birthdate: string;
-    address: string;
-    phone_number: string;
-  };
-  setEditing: (val: null) => void;
+  editing: Student | null;
+  setEditing: (val: Student | null) => void;
 }
 
 const Home = ({ editing, setEditing }: Props) => {
